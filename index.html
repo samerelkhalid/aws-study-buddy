@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AWS Study Buddy</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>AWS Study Buddy</h1>
+
+    <section class="card">
+      <h2 id="service"></h2>
+      <div id="answer" hidden>
+        <p id="description"></p>
+        <p><span class="label">Category:</span> <span id="category"></span></p>
+        <p><a id="docs-link" href="#" target="_blank" rel="noopener noreferrer">Official documentation</a></p>
+      </div>
+      <button type="button" id="show-answer">Show answer</button>
+    </section>
+
+    <nav class="controls">
+      <button type="button" id="prev">Previous</button>
+      <span id="position"></span>
+      <button type="button" id="next">Next</button>
+    </nav>
+  </main>
+
+  <script src="cards.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
