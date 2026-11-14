@@ -1,0 +1,6 @@
+# Environment files
+.env
+.env.*
+
+# Personal Claude Code notes
+CLAUDE.local.md
