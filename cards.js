@@ -58,6 +58,12 @@ const CARDS = [
     description: "Amazon Bedrock AgentCore lets you build, run and monitor AI agents (programs that use an AI model to take actions for you) without managing any servers.",
     category: "Machine Learning / AI",
     docsUrl: "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html"
+  },
+  {
+    service: "AWS Lambda",
+    description: "AWS Lambda runs your code when something happens, like a file upload, without you managing any servers.",
+    category: "Compute",
+    docsUrl: "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
   }
 ];
 if (typeof module !== "undefined") module.exports = CARDS;
