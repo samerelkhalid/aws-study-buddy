@@ -51,7 +51,7 @@ const CARDS = [
     service: "AWS Fargate",
     description: "AWS Fargate runs your containers without you having to set up or look after any servers, and you pay only for what each app uses.",
     category: "Containers",
-    docsUrl: "https://docs.aws.amazon.com/decision-guides/latest/decision-guides/choosing-aws-compute-service.html"
+    docsUrl: "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html"
   },
   {
     service: "Amazon Bedrock AgentCore",
