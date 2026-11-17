@@ -64,6 +64,12 @@ const CARDS = [
     description: "AWS Lambda runs your code when something happens, like a file upload, without you managing any servers.",
     category: "Compute",
     docsUrl: "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+  },
+  {
+    service: "Amazon SQS",
+    description: "Amazon SQS stores messages in a queue (a waiting line) so parts of your app can pass work along.",
+    category: "Application Integration",
+    docsUrl: "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
   }
 ];
 if (typeof module !== "undefined") module.exports = CARDS;
