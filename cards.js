@@ -70,6 +70,24 @@ const CARDS = [
     description: "Amazon SQS stores messages in a queue (a waiting line) so parts of your app can pass work along.",
     category: "Application Integration",
     docsUrl: "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+  },
+  {
+    service: "Elastic Load Balancing",
+    description: "Elastic Load Balancing spreads incoming visitor requests across several servers, sending them only to healthy ones.",
+    category: "Networking",
+    docsUrl: "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html"
+  },
+  {
+    service: "Amazon ECR",
+    description: "Amazon ECR safely stores your container images (packaged copies of your app) so you can download and run them.",
+    category: "Containers",
+    docsUrl: "https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html"
+  },
+  {
+    service: "AWS Secrets Manager",
+    description: "AWS Secrets Manager stores and regularly changes secrets (passwords and API keys) so they stay out of your code.",
+    category: "Security",
+    docsUrl: "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"
   }
 ];
 if (typeof module !== "undefined") module.exports = CARDS;
