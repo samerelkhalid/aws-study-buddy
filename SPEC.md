@@ -38,15 +38,16 @@ Each card has these four required fields, all non-empty strings:
 - `category`: a short free-text label, e.g. "Security"
 - `docsUrl`: the official docs page; must start with `https://docs.aws.amazon.com/`
 
-Starter cards (3): **Amazon ECS**, **AWS IAM**, **Amazon Bedrock**. These stay as cards 1–3, in that order. More cards come after them (12 cards in total today), added with the add-card skill.
+Starter cards (3): **Amazon ECS**, **AWS IAM**, **Amazon Bedrock**. These stay as cards 1–3, in that order. More cards come after them (see `cards.js` for the current count), added with the add-card skill.
 
 ## App behavior
 - Shows one card at a time, starting with the first card in `cards.js`.
 - Initially only the service name is visible, plus a **Show answer** button.
 - **Show answer** reveals the description, the category, and the docs link (opens in a new tab).
-- **Next** and **Previous** move through the cards in `cards.js` order, wrapping from last to first and from first to last. Moving to another card hides the answer again.
+- **Next** and **Previous** move through the cards in the current order, wrapping from last to first and from first to last. Moving to another card hides the answer again. The current order is `cards.js` order until the cards are shuffled.
+- **Shuffle** puts all the cards in a new random order, then goes back to the first card of that order with the answer hidden. Every card stays in the deck exactly once. `cards.js` itself is not changed.
 - Shows the position, e.g. "2 / 3".
-- Nothing is saved between visits; reloading starts at card 1.
+- Nothing is saved between visits; reloading starts at card 1 in `cards.js` order.
 
 ## Check script (`check.js`)
 Run with `node check.js`. It loads `cards.js` with `require` and reports **every** problem, not just the first.
@@ -65,7 +66,8 @@ Output:
 - [ ] Double-clicking `index.html` opens the app in a browser with no server and no console errors.
 - [ ] The first card shows "Amazon ECS" with the answer hidden.
 - [ ] **Show answer** reveals a one-sentence description, a category, and a working link to the ECS docs on docs.aws.amazon.com.
-- [ ] **Next**/**Previous** cycle through every card in `cards.js` order (ECS → IAM → Bedrock → …) and wrap at both ends; the answer re-hides on each move; the position counter is correct (e.g. "1 / 12").
+- [ ] **Next**/**Previous** cycle through every card in `cards.js` order (ECS → IAM → Bedrock → …) and wrap at both ends; the answer re-hides on each move; the position counter is correct (e.g. "1 / N", where N is the number of cards in `cards.js`).
+- [ ] **Shuffle** changes the card order, shows the first card of the new order with the answer hidden and the counter at "1 / N", and **Next**/**Previous** then visit every card exactly once before wrapping.
 - [ ] `cards.js` contains only card data, starting with the 3 starter cards.
 - [ ] `node check.js` on the current cards prints `PASS` and exits `0`.
 - [ ] Each of these, introduced one at a time into `cards.js`, makes `node check.js` print `FAIL` plus a line describing the problem and exit `2`: a card with a field removed; a card with an empty field; a duplicate service (including one differing only in case); a `docsUrl` starting with something other than `https://docs.aws.amazon.com/`.
@@ -75,7 +77,6 @@ Output:
 ## Not now
 - Remembering progress or the current card between visits (localStorage etc.)
 - Marking cards as known / spaced repetition / scoring
-- Shuffle or random order
 - A fixed list of allowed categories, or filtering by category
 - Adding or editing cards from the page
 - Checking that docs links actually resolve (network requests)

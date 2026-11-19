@@ -78,10 +78,18 @@ button:focus-visible {
 
 .controls {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.nav-row {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 20px;
+  width: 100%;
 }
 
 .controls button {
